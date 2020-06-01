@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Chordian/static/css/main.1565e480.chunk.css",
+    "main.js": "/Chordian/static/js/main.d56bb804.chunk.js",
+    "main.js.map": "/Chordian/static/js/main.d56bb804.chunk.js.map",
+    "runtime-main.js": "/Chordian/static/js/runtime-main.bb2e5aa5.js",
+    "runtime-main.js.map": "/Chordian/static/js/runtime-main.bb2e5aa5.js.map",
+    "static/js/2.aa749b2f.chunk.js": "/Chordian/static/js/2.aa749b2f.chunk.js",
+    "static/js/2.aa749b2f.chunk.js.map": "/Chordian/static/js/2.aa749b2f.chunk.js.map",
+    "index.html": "/Chordian/index.html",
+    "precache-manifest.8a57e5a5485179b7c1228267a91d5792.js": "/Chordian/precache-manifest.8a57e5a5485179b7c1228267a91d5792.js",
+    "service-worker.js": "/Chordian/service-worker.js",
+    "static/css/main.1565e480.chunk.css.map": "/Chordian/static/css/main.1565e480.chunk.css.map",
+    "static/js/2.aa749b2f.chunk.js.LICENSE.txt": "/Chordian/static/js/2.aa749b2f.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Chordian/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb2e5aa5.js",
+    "static/js/2.aa749b2f.chunk.js",
+    "static/css/main.1565e480.chunk.css",
+    "static/js/main.d56bb804.chunk.js"
+  ]
+}
