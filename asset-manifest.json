@@ -1,23 +1,32 @@
 {
   "files": {
     "main.css": "/Chordian/static/css/main.1565e480.chunk.css",
-    "main.js": "/Chordian/static/js/main.d56bb804.chunk.js",
-    "main.js.map": "/Chordian/static/js/main.d56bb804.chunk.js.map",
+    "main.js": "/Chordian/static/js/main.5711c5d0.chunk.js",
+    "main.js.map": "/Chordian/static/js/main.5711c5d0.chunk.js.map",
     "runtime-main.js": "/Chordian/static/js/runtime-main.bb2e5aa5.js",
     "runtime-main.js.map": "/Chordian/static/js/runtime-main.bb2e5aa5.js.map",
-    "static/js/2.aa749b2f.chunk.js": "/Chordian/static/js/2.aa749b2f.chunk.js",
-    "static/js/2.aa749b2f.chunk.js.map": "/Chordian/static/js/2.aa749b2f.chunk.js.map",
+    "static/js/2.c92e37cc.chunk.js": "/Chordian/static/js/2.c92e37cc.chunk.js",
+    "static/js/2.c92e37cc.chunk.js.map": "/Chordian/static/js/2.c92e37cc.chunk.js.map",
     "index.html": "/Chordian/index.html",
-    "precache-manifest.8a57e5a5485179b7c1228267a91d5792.js": "/Chordian/precache-manifest.8a57e5a5485179b7c1228267a91d5792.js",
+    "precache-manifest.ad364e57caec74e116ea412962a96e89.js": "/Chordian/precache-manifest.ad364e57caec74e116ea412962a96e89.js",
     "service-worker.js": "/Chordian/service-worker.js",
     "static/css/main.1565e480.chunk.css.map": "/Chordian/static/css/main.1565e480.chunk.css.map",
-    "static/js/2.aa749b2f.chunk.js.LICENSE.txt": "/Chordian/static/js/2.aa749b2f.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/Chordian/static/media/logo.5d5d9eef.svg"
+    "static/js/2.c92e37cc.chunk.js.LICENSE.txt": "/Chordian/static/js/2.c92e37cc.chunk.js.LICENSE.txt",
+    "static/media/amaj.mp3": "/Chordian/static/media/amaj.7e5cb06f.mp3",
+    "static/media/amin.mp3": "/Chordian/static/media/amin.ff0b86b1.mp3",
+    "static/media/bmin.mp3": "/Chordian/static/media/bmin.c00f5ea5.mp3",
+    "static/media/cmaj.mp3": "/Chordian/static/media/cmaj.df0d5535.mp3",
+    "static/media/dmaj.mp3": "/Chordian/static/media/dmaj.de624715.mp3",
+    "static/media/dmin.mp3": "/Chordian/static/media/dmin.0eabd93d.mp3",
+    "static/media/emaj.mp3": "/Chordian/static/media/emaj.c0599fe9.mp3",
+    "static/media/emin.mp3": "/Chordian/static/media/emin.f47cfdca.mp3",
+    "static/media/fmaj.mp3": "/Chordian/static/media/fmaj.418af29c.mp3",
+    "static/media/gmaj.mp3": "/Chordian/static/media/gmaj.5722a12d.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.bb2e5aa5.js",
-    "static/js/2.aa749b2f.chunk.js",
+    "static/js/2.c92e37cc.chunk.js",
     "static/css/main.1565e480.chunk.css",
-    "static/js/main.d56bb804.chunk.js"
+    "static/js/main.5711c5d0.chunk.js"
   ]
 }

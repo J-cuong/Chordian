@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Chordian/precache-manifest.8a57e5a5485179b7c1228267a91d5792.js"
+  "/Chordian/precache-manifest.ad364e57caec74e116ea412962a96e89.js"
 );
 
 self.addEventListener('message', (event) => {
