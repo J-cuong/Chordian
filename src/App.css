@@ -12,8 +12,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.intro{
+  position:absolute;
+  padding:10% 36%;
+  font-size:85%;
+}
 
 .App-header {
+  z-index: 5;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -40,7 +46,7 @@
   background-color: #008CBA; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15% 32%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -49,115 +55,126 @@
 
 .High-Score{
   position: absolute;
-  top: 50px;
-  right: 50px;
+  top: 5%;
+  right: 5%;
 }
 .Game-button1 {
   background-color: rgb(135, 168, 97); 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 1%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: calc(10px + 2vmin);
-  width: 300px;
-  height:100px;
-  margin:10px;
+  width: 45%;
+  height: 40%;
+  margin:1%;
   cursor:pointer;
 }
 .Game-button2 {
   background-color: rgb(80, 53, 85); 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 1%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: calc(10px + 2vmin);
-  width: 300px;
-  height:100px;
-  margin:10px;
+  width: 45%;
+  height: 40%;
+  margin:1%;
   cursor:pointer;
 }
 .Game-button3 {
   background-color: rgb(49, 81, 141); 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 1%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: calc(10px + 2vmin);
-  width: 300px;
-  height:100px;
-  margin:10px;
+  width: 45%;
+  height: 40%;
+  margin:1%;
   cursor:pointer;
 }
 .Game-button4 {
   background-color: rgb(90, 37, 35); 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 1%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: calc(10px + 2vmin);
-  width: 300px;
-  height:100px;
-  margin:10px;
+  width: 45%;
+  height: 40%;
+  margin:1%;
   cursor:pointer;
 }
 .container{
   position:absolute;
-  bottom:150px;
-  right:650px;
+  bottom:15%;
+  right:33.5%;
   background-color:rgb(20, 22, 32);
-  height:240px;
-  width:650px;
+  height:25%;
+  width:35%;
 }
 .result{
   position:absolute;
-  bottom:0px;
-  left:265px;
+  bottom:0%;
+  left:40%;
 }
 .replay{
   position: absolute;
-  bottom: 235px;
+  bottom: 100%;
   background-color: rgb(56, 90, 105); 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 1%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: calc(10px + 2vmin);
-  width: 600px;
-  height:100px;
-  margin:10px;
+  width: 90%;
+  height:40%;
+  margin:1%;
   cursor:pointer;
 }
 .Question{
   position:absolute;
   text-align:center;
   display: inline-block;
-  bottom:550px;
-  right:650px;
+  bottom:55%;
+  right:28%;
   background-color:rgb(20, 22, 32);
-  height:240px;
-  width:650px;
+  height:30%;
+  width:45%;
 }
 .Game-skip {
   background-color: rgb(156, 137, 50); 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 1%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: calc(10px + 2vmin);
-  width: 600px;
-  height:100px;
-  margin:10px;
+  width: 90%;
+  height:40%;
+  margin:1%;
   cursor:pointer;
+}
+.show {
+  background-color: #008CBA;
+}
+.chordPic{
+  position:absolute;
+  left:38%;
+  top:15%;
+  display: block;
+  max-width: 100%;
+  max-height: fill-available;
 }

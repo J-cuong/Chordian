@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Answers from './Answers';
 
 import amaj from './amaj.png';
 import amin from './amin.png';
@@ -22,12 +23,37 @@ import emajMP from './emaj.mp3';
 import eminMP from './emin.mp3';
 import fmajMP from './fmaj.mp3';
 import gmajMP from './gmaj.mp3';
-
+/*
+        <div className="Game-Start">
+        <button className="Game-Start" onClick={() => this.startGame()}>
+          Start Game
+        </button>
+        </div>*/
 class chord {
   constructor(chordName,chordSound,chordPic){
     this.chordName = chordName;
     this.chordPic = chordPic
     this.chordSound = chordSound;
+  }
+}
+const Dropdown = ({show}) => 
+
+<button onClick={() => Results.dropdownVisible=false} style={{visibility: show ? "visible" : "hidden", backgroundColor: "blue", position: "absolute", height: "100%", width: "100%"}}>
+</button>
+class Results extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      dropdownVisible:true
+    }
+  }
+  
+  render(){
+    return(
+      <div>
+      <Dropdown show={this.state.dropdownVisible} />
+      </div>
+    );
   }
 }
 class Container extends React.Component{
@@ -40,9 +66,10 @@ class Container extends React.Component{
     result:"",
     test:[],
     correctName:"",
-    correctPic:""
+    correctPic:"",
+    play:"Play",
+    intro:"Chordian Requires sound Press play at the bottom"
   };
-  
   this.state.test=[
     new chord("amaj",amajMP,amaj),
     new chord("amin",aminMP,amin),
@@ -56,8 +83,6 @@ class Container extends React.Component{
     new chord("gmaj",gmajMP,gmaj),
   ];
   
-  let audio = new Audio(this.state.test[0].chordSound)
-  audio.play();
   for (let i = this.state.test.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [this.state.test[i], this.state.test[j]] = [this.state.test[j], this.state.test[i]];
@@ -79,7 +104,14 @@ ansClick(answer){
   this.state.correct=new chord(this.state.test[0].chordName,this.state.test[0].chordSound,this.state.test[0].chordPic);
   this.state.correctName = this.state.test[0].chordName;
   this.state.correctPic = this.state.test[0].chordPic;
-  if(answer === this.state.test[0].chordName){
+  if(this.state.play==="Play"){
+    this.setState((state) =>{
+    return {play:"Skip",intro:"",correctName:"",correctPic:""}})
+    this.randomize();
+    let audio = new Audio(this.state.test[0].chordSound)
+    audio.play();
+  }
+  else if(answer === this.state.test[0].chordName){
     this.state.highScore = this.state.highScore + 100;
     this.randomize();
     let audio = new Audio(this.state.test[0].chordSound)
@@ -94,7 +126,7 @@ ansClick(answer){
     let audio = new Audio(this.state.test[0].chordSound)
     audio.play();
     this.setState((state) => {
-      return {result : <font color="yellow">Skipped</font>}
+        return {result : <font color="yellow">Skipped</font>}
     })
   }
   else{
@@ -127,15 +159,19 @@ for (let i = this.state.ansList.length - 1; i > 0; i--) {
     [this.state.ansList[i], this.state.ansList[j]] = [this.state.ansList[j], this.state.ansList[i]];
   }
 }
+startGame(){
+}
 
   render(){
-
     return(
       <div>
       <div className="High-Score">
       High Score {this.state.highScore} 
       </div>
       <div className="Question">
+        <div className="intro">
+          {this.state.intro}
+        </div>
         {this.state.correctName}
         <div className="chordPic">
           <img src={this.state.correctPic}></img>
@@ -160,7 +196,7 @@ for (let i = this.state.ansList.length - 1; i > 0; i--) {
         Button {this.state.ansList[3].chordName}
         </button>
         <button className="Game-skip"onClick={() => this.ansClick("")}>
-        Skip
+        {this.state.play}
         </button>
         </div>
         </div>
@@ -173,6 +209,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          <Answers />
           <Container />
         </div>
       </header>
