@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fb65919dd982f13876bfbd3b34f574f5",
+    "revision": "725a1b9a317e6579eddc50f52d0c16bd",
     "url": "/Chordian/index.html"
   },
   {
-    "revision": "90d07e70f27f2bb7aacb",
-    "url": "/Chordian/static/css/main.1565e480.chunk.css"
+    "revision": "784def31a46ccec655b3",
+    "url": "/Chordian/static/css/main.12cfc9cd.chunk.css"
   },
   {
-    "revision": "da632196736727668ad4",
-    "url": "/Chordian/static/js/2.c92e37cc.chunk.js"
+    "revision": "3c7608b6c5b9e77296bc",
+    "url": "/Chordian/static/js/2.ca635564.chunk.js"
   },
   {
     "revision": "5356fa2f66e46e6c05e4cbe319ac7f1d",
-    "url": "/Chordian/static/js/2.c92e37cc.chunk.js.LICENSE.txt"
+    "url": "/Chordian/static/js/2.ca635564.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "90d07e70f27f2bb7aacb",
-    "url": "/Chordian/static/js/main.5711c5d0.chunk.js"
+    "revision": "784def31a46ccec655b3",
+    "url": "/Chordian/static/js/main.fb8289a1.chunk.js"
   },
   {
     "revision": "9c214f435021c6bc713b",
@@ -62,5 +62,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "5722a12dcbfe079123c02d8819547adb",
     "url": "/Chordian/static/media/gmaj.5722a12d.mp3"
+  },
+  {
+    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
+    "url": "/Chordian/static/media/logo.5d5d9eef.svg"
   }
 ]);
