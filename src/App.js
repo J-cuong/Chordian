@@ -36,6 +36,7 @@ class chord {
     this.chordSound = chordSound;
   }
 }
+
 const Dropdown = ({show}) => 
 
 <button onClick={() => Results.dropdownVisible=false} style={{visibility: show ? "visible" : "hidden", backgroundColor: "blue", position: "absolute", height: "100%", width: "100%"}}>
@@ -61,6 +62,8 @@ class Container extends React.Component{
   super(props);
   this.state={
     highScore : 0,
+    email:"asdf@asdf",
+    password:"asdf",
     removed:[],
     ansList:[],
     result:"",
@@ -68,7 +71,9 @@ class Container extends React.Component{
     correctName:"",
     correctPic:"",
     play:"Play",
-    intro:"Chordian Requires sound Press play at the bottom"
+    intro:"Chordian Requires sound Press play at the bottom",
+    userId:"",
+    userHigh:0
   };
   this.state.test=[
     new chord("amaj",amajMP,amaj),
@@ -113,13 +118,28 @@ ansClick(answer){
   }
   else if(answer === this.state.test[0].chordName){
     this.state.highScore = this.state.highScore + 100;
+    if(this.state.userId && this.state.userHigh<this.state.highScore){
+      this.state.userHigh = this.state.highScore;
+      var url = 'http://localhost:8080/user/'+this.state.userId;
+    fetch(url,  {
+      method: 'PATCH',
+      body: '[{"propName":"score","value":"'+this.state.userHigh+'"}]',
+      headers: {"Content-type":"application/json; charset=UTF-8"
+      }
+    })
+    .then(JSON)
+    .then(function (data) {
+      console.log('Request succeeded with JSON response', data);
+    })
+    .catch(function (error) {
+      console.log('Request failed', error);
+    });}
     this.randomize();
     let audio = new Audio(this.state.test[0].chordSound)
     audio.play();
     this.setState((state) =>{
       return {highScore : state.highScore, result : <font color="green">Correct!</font>, correctName : this.state.correctName, correctPic:this.state.correctPic};
     })
-    console.log(this.state.highScore)
   }
   else if(answer === ""){
     this.randomize();
@@ -162,11 +182,78 @@ for (let i = this.state.ansList.length - 1; i > 0; i--) {
 startGame(){
 }
 
+
+FormChangeHandler = (event) => {
+  let nam = event.target.name;
+  let val = event.target.value;
+  this.setState({[nam]: val});
+}
+
+submitLogIn = (event) => {
+  event.preventDefault();
+  var url = 'http://localhost:8080/user/login';
+  fetch(url,  {
+    method: 'POST',
+    body: "{\"email\": \""+this.state.email+"\", \"password\":\""+this.state.password+"\"}",
+    headers: {"Content-type":"application/json; charset=UTF-8"
+    }
+  }).then(response => response.json()).then(data => {
+    var obj = JSON.parse(JSON.stringify(data));
+    this.state.userId = obj.userId;
+    this.state.userHigh = obj.score;
+    this.setState({[this.state.userHigh]: this.state.userHigh});
+    console.log(obj);
+    console.log(this.state.userId)
+  })
+  .catch(function (error) {
+    console.log('Request failed', error);
+  });
+  //alert("You are submitting " + this.state.email + " , " + this.state.password);
+}
+
+submitSignUP(){
+  console.log("yerrr");
+  var url = 'http://localhost:8080/user/signup';
+  fetch(url,  {
+    method: 'POST',
+    body: "{\"email\": \""+this.state.email+"\", \"password\":\""+this.state.password+"\"}",
+    headers: {"Content-type":"application/json; charset=UTF-8"
+    }
+  }).then(response => response.json()).then(data => {
+    var obj = JSON.parse(JSON.stringify(data));
+    this.state.userId = obj.userId;
+    this.state.userHigh = obj.score;
+    this.setState({[this.state.userHigh]: this.state.userHigh});
+    console.log(obj);
+    console.log(this.state.userId)
+  })
+  .catch(function (error) {
+    console.log('Request failed', error);
+  });
+}
   render(){
     return(
       <div>
+        
+        <div className ="Login">
+  <form onSubmit={this.submitLogIn}>
+  <label>
+    Email:
+    <input type="text" name="email" onChange={this.FormChangeHandler}/>
+  </label>
+        
+  <label>
+       Password:
+    <input type="text" name="password" onChange={this.FormChangeHandler}/>
+  </label>
+  
+  <input type="submit" id="LogIN" value="Log In" />
+</form>
+<button onClick={()=>this.submitSignUP()}>Sign UP</button>
+      </div>
       <div className="High-Score">
-      High Score {this.state.highScore} 
+      High Score {this.state.userHigh} <br></br>
+      Score {this.state.highScore}
       </div>
       <div className="Question">
         <div className="intro">
