@@ -120,7 +120,7 @@ ansClick(answer){
     this.state.highScore = this.state.highScore + 100;
     if(this.state.userId && this.state.userHigh<this.state.highScore){
       this.state.userHigh = this.state.highScore;
-      var url = 'http://localhost:8080/user/'+this.state.userId;
+      var url = 'http://ec2-3-129-18-39.us-east-2.compute.amazonaws.com:8080/user/'+this.state.userId;
     fetch(url,  {
       method: 'PATCH',
       body: '[{"propName":"score","value":"'+this.state.userHigh+'"}]',
@@ -191,7 +191,7 @@ FormChangeHandler = (event) => {
 
 submitLogIn = (event) => {
   event.preventDefault();
-  var url = 'http://localhost:8080/user/login';
+  var url = 'http://ec2-3-129-18-39.us-east-2.compute.amazonaws.com:8080/user/login';
   fetch(url,  {
     method: 'POST',
     body: "{\"email\": \""+this.state.email+"\", \"password\":\""+this.state.password+"\"}",
@@ -213,7 +213,7 @@ submitLogIn = (event) => {
 
 submitSignUP(){
   console.log("yerrr");
-  var url = 'http://localhost:8080/user/signup';
+  var url = 'http://ec2-3-129-18-39.us-east-2.compute.amazonaws.com:8080/user/signup';
   fetch(url,  {
     method: 'POST',
     body: "{\"email\": \""+this.state.email+"\", \"password\":\""+this.state.password+"\"}",
